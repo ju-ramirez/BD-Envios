@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+<div class="container">
+    <form method="POST" action="/store" enctype="multipart/form-data">
+        Cliente:
+        <input type="text" name="txtCliente" id="txtCliente"><br>
+        Dirección:
+        <input type="text" name="txtDirecc" id="txtDirecc"><br>
+        Localidad:
+        <input type="text" name="txtLocalid" id="txtLocalid"><br>
+        Provincia
+        <input type="text" name="txtProv" id="txtProv"><br>
+        Correo
+        <input type="email" name="txtCorreo" id="txtCorreo"><br>
+        Paquete - Hasta: <br>
+        <input type="radio" name="paquete"  value="Sobre">Sobre - 1kg <br>
+        <input type="radio" name="paquete"  value="Pack1">Paquete - 2kg <br>
+        <input type="radio" name="paquete"  value="Pack2">Paquete - 5kg <br>
+        <input type="radio" name="paquete"  value="Caja1">Caja - 10kg <br>
+        <input type="radio" name="paquete"  value="Caja2">Caja - 20kg <br>
+        <br><br>
+        <input type="submit" value="Confirmar">
+    </form>
+</div>
+<br><br>
+{% include 'footer.html' %}

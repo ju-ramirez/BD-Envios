@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+    <br>
+        <a href="{{url_for('create')}}" class="btn btn-success">
+            Añadir envío</a>
+            <br><br>
+        <table class="table table-dark">
+            <thead class="thead-light">
+                <tr>
+                    <th>Envio N°#</th>
+                    <th>Cliente</th>
+                    <th>Dirección</th>
+                    <th>Localidad</th>
+                    <th>Provincia</th>
+                    <th>Contacto</th>
+                    <th>Producto</th>
+                    <th>        </th>
+                </tr>
+            </thead>
+            <tbody>
+                            
+                {% for dato in envios %}
+                <tr>
+                    <td>{{dato[0]}}</td>
+                    <td>{{dato[1]}}</td>
+                    <td>{{dato[2]}}</td>
+                    <td>{{dato[3]}}</td>
+                    <td>{{dato[4]}}</td>
+                    <td>{{dato[5]}}</td>
+                    <td>{{dato[6]}}</td>
+                    <td>
+                        <a class="btn btn-warning" href="/edit/{{dato[0]}}">Editar entrada</a> |
+                        <a class="btn btn-danger"href="/destroy/{{dato[0]}}" onclick="return confirm ('¿Desea eliminar entrada?')">Eliminar entrada</a>
+                    </td>
+                </tr>    
+                {% endfor %}
+            </tbody>
+        </table>
+        <br><br>
+{% include 'footer.html' %}
